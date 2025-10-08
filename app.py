@@ -147,7 +147,7 @@ for i, project in enumerate(projects):
             <div class="card">
                 <h3>{project['title']}</h3>
                 <p>{project['description'].replace('\n','<br>')}</p>
-                <a class="link-button" href="{project['url']}" target="_blank">🔗 ไปยังโปรเจกต์</a>
+                <a class="link-button" href="{project['url']}" target="_blank">View Project</a>
             </div>
             """,
             unsafe_allow_html=True
@@ -166,3 +166,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
