@@ -44,6 +44,7 @@ st.markdown(
         border-radius: 15px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         margin-bottom: 20px;
+        text-align: center;
     }
     .card h3 {
         margin-top: 0;
@@ -53,6 +54,19 @@ st.markdown(
     .card p {
         font-size: 16px;
         color: #555555;
+    }
+    .stButton>button {
+        background-color: #FFA07A;
+        color: #000000;
+        font-size: 16px;
+        border-radius: 12px;
+        padding: 10px 20px;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+    }
+    .stButton>button:hover {
+        background-color: #FFB347;
+        transform: scale(1.05);
     }
     </style>
     """,
@@ -74,57 +88,26 @@ st.markdown(
 )
 
 # ==============================
-# Project Overview Cards
+# Project Overview Buttons
 # ==============================
 st.markdown("---")
-st.markdown("## 🔹 Project Overview", unsafe_allow_html=True)
+st.markdown("## 🔹 เลือกหน้าเพื่อเข้าถึงโปรเจกต์", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown(
-        """
-        <div class="card">
-            <h3>🥬 Profile</h3>
-            <p>ข้อมูลส่วนตัวและ Mini Project ของผู้ทำ  
-            แสดงประสบการณ์และการวิเคราะห์ข้อมูลเบื้องต้น</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
-        """
-        <div class="card">
-            <h3>📺 YouTube Analysis</h3>
-            <p>วิเคราะห์ข้อมูลจาก YouTube เช่น จำนวนผู้ชม ความนิยม  
-            และแสดง Insight ที่สามารถนำไปต่อยอดได้</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    if st.button("👤 Profile", use_container_width=True):
+        st.markdown("ไปที่หน้า Profile")  # หรือใช้ st.session_state / st.experimental_set_page_config
+    if st.button("📺 YouTube Analysis", use_container_width=True):
+        st.markdown("ไปที่หน้า YouTube Analysis")
 
 with col2:
-    st.markdown(
-        """
-        <div class="card">
-            <h3>📱 Samsung Prediction</h3>
-            <p>สร้างโมเดล Machine Learning เพื่อทำนายรุ่น Samsung ที่เหมาะสม  
-            ต่อยอดเป็น Recommendation System</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
-        """
-        <div class="card">
-            <h3>🐾 Animal Classifier</h3>
-            <p>สาธิตการประยุกต์ใช้ AI Classification สำหรับรูปสัตว์  
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    if st.button("📱 Samsung Prediction", use_container_width=True):
+        st.markdown("เปิดแอป Samsung Prediction")
+    if st.button("🐾 Animal Classifier", use_container_width=True):
+        st.markdown(
+            "[ไปที่ Animal Classifier App](https://animal-classifier-na5hzbrtutdzzvjz7wuxv5.streamlit.app/)"
+        )
 
 # ==============================
 # Key Highlights
@@ -162,3 +145,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
