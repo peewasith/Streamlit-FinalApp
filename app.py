@@ -97,40 +97,30 @@ st.markdown("## 🔹 เลือกหน้าเพื่อเข้าถ�
 # ใช้ 2 คอลัมน์สำหรับวางปุ่มสวย ๆ
 col1, col2 = st.columns(2)
 
-with col1:
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown("<h3>👤 Profile</h3>", unsafe_allow_html=True)
-    st.markdown("<p>ดูข้อมูลผู้จัดทำและโปรไฟล์โครงการ</p>", unsafe_allow_html=True)
-    if st.button("เปิด Profile"):
-        st.switch_page("1_Profile")  # ต้องตรงกับชื่อไฟล์ใน pages/
-    st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown("<h3>📺 YouTube Analysis</h3>", unsafe_allow_html=True)
-    st.markdown("<p>สาธิตการวิเคราะห์ข้อมูลจาก YouTube</p>", unsafe_allow_html=True)
-    if st.button("เปิด YouTube Analysis"):
-        st.switch_page("2_YouTube")
-    st.markdown('</div>', unsafe_allow_html=True)
+with col1:
+    if st.button("👤 Profile", use_container_width=True):
+        st.markdown(
+            "[เปิดหน้า Profile](https://profile-app.streamlit.app)", unsafe_allow_html=True
+        )
 
 with col2:
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown("<h3>📱 Samsung Prediction</h3>", unsafe_allow_html=True)
-    st.markdown("<p>สาธิตการทำนายสมาร์ทโฟน Samsung จากโมเดล</p>", unsafe_allow_html=True)
-    if st.button("เปิด Samsung Prediction"):
-        st.switch_page("3_Samsung")
-    st.markdown('</div>', unsafe_allow_html=True)
+    if st.button("📺 YouTube Analysis", use_container_width=True):
+        st.markdown(
+            "[เปิดหน้า YouTube](https://youtube-app.streamlit.app)", unsafe_allow_html=True
+        )
 
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown("<h3>🐾 Animal Classifier</h3>", unsafe_allow_html=True)
-    st.markdown("<p>สาธิตการจำแนกรูปสัตว์ด้วย AI</p>", unsafe_allow_html=True)
-    st.markdown(
-        '<a href="https://animal-classifier-na5hzbrtutdzzvjz7wuxv5.streamlit.app/" target="_blank">'
-        '<button style="background-color:#FFA07A;color:#000000;border:none;padding:12px 24px;'
-        'border-radius:12px;font-size:16px;cursor:pointer;">เปิด Animal Classifier</button>'
-        '</a>',
-        unsafe_allow_html=True
-    )
-    st.markdown('</div>', unsafe_allow_html=True)
+with col3:
+    if st.button("📱 Samsung Prediction", use_container_width=True):
+        st.markdown(
+            "[เปิดหน้า Samsung](https://samsung-app.streamlit.app)", unsafe_allow_html=True
+        )
+
+with col4:
+    if st.button("🐾 Animal Classifier", use_container_width=True):
+        st.markdown(
+            "[เปิดหน้า Animal Classifier](https://animal-classifier-na5hzbrtutdzzvjz7wuxv5.streamlit.app/)", unsafe_allow_html=True
+        )
 
 # ==============================
 # Key Highlights
@@ -169,6 +159,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
