@@ -44,6 +44,7 @@ st.markdown(
         border-radius: 15px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         margin-bottom: 20px;
+        text-align: center;
     }
     .card h3 {
         margin-top: 0;
@@ -54,21 +55,20 @@ st.markdown(
         font-size: 16px;
         color: #555555;
     }
-    .link-box {
-        text-align: center;
-        margin-top: 20px;
-    }
-    .link-box button {
+    .link-button {
         background-color: #FFA07A;
         color: #000000;
         border: none;
-        padding: 10px 20px;
+        padding: 12px 24px;
         border-radius: 12px;
         font-size: 16px;
         cursor: pointer;
         transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
     }
-    .link-box button:hover {
+    .link-button:hover {
         background-color: #FFB347;
         transform: scale(1.05);
     }
@@ -97,81 +97,42 @@ st.markdown(
 st.markdown("---")
 st.markdown("## 🔹 Project Overview", unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
+projects = [
+    {
+        "title": "🥬 Profile",
+        "description": "ข้อมูลส่วนตัวและ Mini Project ของผู้ทำ\nแสดงประสบการณ์และการวิเคราะห์ข้อมูลเบื้องต้น",
+        "url": "https://profile-wpynhxgkiogzasua4wgw6w.streamlit.app/"
+    },
+    {
+        "title": "📺 YouTube Analysis",
+        "description": "วิเคราะห์ข้อมูลจาก YouTube เช่น จำนวนผู้ชม ความนิยม\nและแสดง Insight ที่สามารถนำไปต่อยอดได้",
+        "url": "https://youtube-r8zgz3xwymqrumrjg9tjjk.streamlit.app/"
+    },
+    {
+        "title": "📱 Samsung Prediction",
+        "description": "สร้างโมเดล Machine Learning เพื่อทำนายรุ่น Samsung ที่เหมาะสม\nต่อยอดเป็น Recommendation System",
+        "url": "https://samsungfinal-snzzb7rvkmxv2b9pnnp2v4.streamlit.app/"
+    },
+    {
+        "title": "🐾 Animal Classifier",
+        "description": "สาธิตการประยุกต์ใช้ AI Classification สำหรับรูปสัตว์\nทดสอบการจำแนกรูปภาพแบบ Deep Learning (VGG16)",
+        "url": "https://7bbbzkxrabjl8jsiabbfwp.streamlit.app/"
+    }
+]
 
-with col1:
-    with st.container():
+cols = st.columns(2)
+for i, project in enumerate(projects):
+    with cols[i % 2]:
         st.markdown(
-            """
+            f"""
             <div class="card">
-                <h3>🥬 Profile</h3>
-                <p>ข้อมูลส่วนตัวและ Mini Project ของผู้ทำ  
-                แสดงประสบการณ์และการวิเคราะห์ข้อมูลเบื้องต้น</p>
+                <h3>{project['title']}</h3>
+                <p>{project['description'].replace('\n','<br>')}</p>
+                <a class="link-button" href="{project['url']}" target="_blank">🔗 ไปยังโปรเจกต์</a>
             </div>
             """,
             unsafe_allow_html=True
         )
-        st.page_link("pages/1_Profile.py", label="👤 ไปที่หน้า Profile", icon="📄")
-
-    with st.container():
-        st.markdown(
-            """
-            <div class="card">
-                <h3>📺 YouTube Analysis</h3>
-                <p>วิเคราะห์ข้อมูลจาก YouTube เช่น จำนวนผู้ชม ความนิยม  
-                และแสดง Insight ที่สามารถนำไปต่อยอดได้</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-        st.page_link("pages/2_Youtube.py", label="🎥 ไปที่หน้า YouTube Analysis", icon="📊")
-
-with col2:
-    with st.container():
-        st.markdown(
-            """
-            <div class="card">
-                <h3>📱 Samsung Prediction</h3>
-                <p>สร้างโมเดล Machine Learning เพื่อทำนายรุ่น Samsung ที่เหมาะสม  
-                ต่อยอดเป็น Recommendation System</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-        st.page_link("pages/3_Samsung.py", label="📱 ไปที่หน้า Samsung Prediction", icon="🤖")
-
-    with st.container():
-        st.markdown(
-            """
-            <div class="card">
-                <h3>🐾 Animal Classifier</h3>
-                <p>สาธิตการประยุกต์ใช้ AI Classification สำหรับรูปสัตว์  
-                ทดสอบการจำแนกรูปภาพแบบ Deep Learning (VGG16)</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-        st.page_link("pages/4_Final.py", label="🐾 ไปที่หน้า Animal Classifier", icon="🐾")
-
-# ==============================
-# Key Highlights
-# ==============================
-st.markdown("---")
-st.markdown("## 🌟 Key Highlights", unsafe_allow_html=True)
-
-st.markdown(
-    """
-    <div class="card">
-        <h3>เทคโนโลยีที่ใช้</h3>
-        <p>- Streamlit สำหรับ Web-based UI / Dashboard  
-        - TensorFlow / Keras สำหรับ Deep Learning (Image Classification)  
-        - Machine Learning โมเดลหลายแบบ (Decision Tree, Random Forest)  
-        - Transfer Learning กับ Pretrained Model (VGG16)  
-        - Data Preprocessing, Evaluation Metrics และ Visualization</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
 # ==============================
 # Footer / CTA
@@ -181,15 +142,8 @@ st.markdown(
     <div class="card" style="text-align:center;">
         <h3>ทดลองใช้งานโปรเจกต์จริง</h3>
         <p>คลิกเพื่อเปิด Animal Classifier App และดูการทำงานจริง</p>
-        <a href="https://animal-classifier-na5hzbrtutdzzvjz7wuxv5.streamlit.app/" target="_blank">
-        <button style="background-color:#FFA07A;color:#000000;border:none;padding:12px 24px;
-        border-radius:12px;font-size:16px;cursor:pointer;">🐾 เปิดแอป Animal Classifier</button>
-        </a>
+        <a class="link-button" href="https://7bbbzkxrabjl8jsiabbfwp.streamlit.app/" target="_blank">🐾 เปิด Animal Classifier</a>
     </div>
     """,
     unsafe_allow_html=True
 )
-
-
-
-
