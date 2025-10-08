@@ -54,12 +54,23 @@ st.markdown(
         font-size: 16px;
         color: #555555;
     }
-    .page-links {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 30px;
+    .link-box {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .link-box button {
+        background-color: #FFA07A;
+        color: #000000;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .link-box button:hover {
+        background-color: #FFB347;
+        transform: scale(1.05);
     }
     </style>
     """,
@@ -81,21 +92,7 @@ st.markdown(
 )
 
 # ==============================
-# 🔗 Project Navigation Links
-# ==============================
-st.markdown("## 🚀 Explore Each Project", unsafe_allow_html=True)
-st.markdown('<div class="page-links">', unsafe_allow_html=True)
-
-col1, col2, col3, col4 = st.columns(4)
-
-st.page_link("1_Profile.py", label="👤 Profile", icon="📄")
-st.page_link("2_Youtube.py", label="🎥 YouTube Analysis", icon="📊")
-st.page_link("3_Samsung.py", label="📱 Samsung Prediction", icon="📱")
-st.page_link("4_Final.py", label="🐾 Animal Classifier", icon="🐾")
-st.markdown('</div>', unsafe_allow_html=True)
-
-# ==============================
-# Project Overview
+# Project Overview Cards
 # ==============================
 st.markdown("---")
 st.markdown("## 🔹 Project Overview", unsafe_allow_html=True)
@@ -103,53 +100,65 @@ st.markdown("## 🔹 Project Overview", unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown(
-        """
-        <div class="card">
-            <h3>🥬 Profile</h3>
-            <p>ข้อมูลส่วนตัวและ Mini Project ของผู้ทำ  
-            แสดงประสบการณ์และการวิเคราะห์ข้อมูลเบื้องต้น</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """
-        <div class="card">
-            <h3>📺 YouTube Analysis</h3>
-            <p>วิเคราะห์ข้อมูลจาก YouTube เช่น จำนวนผู้ชม ความนิยม  
-            และแสดง Insight ที่สามารถนำไปต่อยอดได้</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    with st.container():
+        st.markdown(
+            """
+            <div class="card">
+                <h3>🥬 Profile</h3>
+                <p>ข้อมูลส่วนตัวและ Mini Project ของผู้ทำ  
+                แสดงประสบการณ์และการวิเคราะห์ข้อมูลเบื้องต้น</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        st.page_link("1_Profile.py", label="👤 ไปที่หน้า Profile", icon="📄")
+
+    with st.container():
+        st.markdown(
+            """
+            <div class="card">
+                <h3>📺 YouTube Analysis</h3>
+                <p>วิเคราะห์ข้อมูลจาก YouTube เช่น จำนวนผู้ชม ความนิยม  
+                และแสดง Insight ที่สามารถนำไปต่อยอดได้</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        st.page_link("2_Youtube.py", label="🎥 ไปที่หน้า YouTube Analysis", icon="📊")
 
 with col2:
-    st.markdown(
-        """
-        <div class="card">
-            <h3>📱 Samsung Prediction</h3>
-            <p>สร้างโมเดล Machine Learning เพื่อทำนายรุ่น Samsung ที่เหมาะสม  
-            ต่อยอดเป็น Recommendation System</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """
-        <div class="card">
-            <h3>🐾 Animal Classifier</h3>
-            <p>สาธิตการประยุกต์ใช้ AI Classification สำหรับรูปสัตว์</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    with st.container():
+        st.markdown(
+            """
+            <div class="card">
+                <h3>📱 Samsung Prediction</h3>
+                <p>สร้างโมเดล Machine Learning เพื่อทำนายรุ่น Samsung ที่เหมาะสม  
+                ต่อยอดเป็น Recommendation System</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        st.page_link("3_Samsung.py", label="📱 ไปที่หน้า Samsung Prediction", icon="🤖")
+
+    with st.container():
+        st.markdown(
+            """
+            <div class="card">
+                <h3>🐾 Animal Classifier</h3>
+                <p>สาธิตการประยุกต์ใช้ AI Classification สำหรับรูปสัตว์  
+                ทดสอบการจำแนกรูปภาพแบบ Deep Learning (VGG16)</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        st.page_link("4_Final.py", label="🐾 ไปที่หน้า Animal Classifier", icon="🐾")
 
 # ==============================
 # Key Highlights
 # ==============================
 st.markdown("---")
 st.markdown("## 🌟 Key Highlights", unsafe_allow_html=True)
+
 st.markdown(
     """
     <div class="card">
