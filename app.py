@@ -111,7 +111,7 @@ with col1:
             """,
             unsafe_allow_html=True
         )
-        st.page_link("1_Profile.py", label="👤 ไปที่หน้า Profile", icon="📄")
+        st.page_link("pages/1_Profile.py", label="👤 ไปที่หน้า Profile", icon="📄")
 
     with st.container():
         st.markdown(
@@ -124,7 +124,7 @@ with col1:
             """,
             unsafe_allow_html=True
         )
-        st.page_link("2_Youtube.py", label="🎥 ไปที่หน้า YouTube Analysis", icon="📊")
+        st.page_link("pages/2_Youtube.py", label="🎥 ไปที่หน้า YouTube Analysis", icon="📊")
 
 with col2:
     with st.container():
@@ -138,7 +138,7 @@ with col2:
             """,
             unsafe_allow_html=True
         )
-        st.page_link("3_Samsung.py", label="📱 ไปที่หน้า Samsung Prediction", icon="🤖")
+        st.page_link("pages/3_Samsung.py", label="📱 ไปที่หน้า Samsung Prediction", icon="🤖")
 
     with st.container():
         st.markdown(
@@ -151,7 +151,7 @@ with col2:
             """,
             unsafe_allow_html=True
         )
-        st.page_link("4_Final.py", label="🐾 ไปที่หน้า Animal Classifier", icon="🐾")
+        st.page_link("pages/4_Final.py", label="🐾 ไปที่หน้า Animal Classifier", icon="🐾")
 
 # ==============================
 # Key Highlights
@@ -189,6 +189,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
