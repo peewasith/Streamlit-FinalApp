@@ -173,15 +173,16 @@ st.markdown(
     """
     <div class="card">
         <h3>เทคโนโลยีที่ใช้</h3>
-        <p>- Streamlit สำหรับ Web-based UI / Dashboard  
-        - TensorFlow / Keras สำหรับ Deep Learning (Image Classification)  
-        - Machine Learning โมเดลหลายแบบ (Decision Tree, Random Forest)  
-        - Transfer Learning กับ Pretrained Model (VGG16)  
+        <p>- Streamlit สำหรับ Web-based UI / Dashboard \n
+        - TensorFlow / Keras สำหรับ Deep Learning (Image Classification)\n 
+        - Machine Learning โมเดลหลายแบบ (Decision Tree, Random Forest)\n  
+        - Transfer Learning กับ Pretrained Model (VGG16)\n  
         - Data Preprocessing, Evaluation Metrics และ Visualization</p>
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 
