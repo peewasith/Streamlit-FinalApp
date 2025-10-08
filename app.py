@@ -166,5 +166,22 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.markdown("---")
+st.markdown("## 🌟 Key Highlights", unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <div class="card">
+        <h3>เทคโนโลยีที่ใช้</h3>
+        <p>- Streamlit สำหรับ Web-based UI / Dashboard  
+        - TensorFlow / Keras สำหรับ Deep Learning (Image Classification)  
+        - Machine Learning โมเดลหลายแบบ (Decision Tree, Random Forest)  
+        - Transfer Learning กับ Pretrained Model (VGG16)  
+        - Data Preprocessing, Evaluation Metrics และ Visualization</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 
