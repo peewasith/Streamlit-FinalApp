@@ -54,6 +54,13 @@ st.markdown(
         font-size: 16px;
         color: #555555;
     }
+    .page-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -74,7 +81,26 @@ st.markdown(
 )
 
 # ==============================
-# Project Overview Cards
+# 🔗 Project Navigation Links
+# ==============================
+st.markdown("## 🚀 Explore Each Project", unsafe_allow_html=True)
+st.markdown('<div class="page-links">', unsafe_allow_html=True)
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.page_link("pages/1_Profile.py", label="👤 Profile", icon="📄")
+with col2:
+    st.page_link("pages/2_Youtube.py", label="🎥 YouTube Analysis", icon="📊")
+with col3:
+    st.page_link("pages/3_Samsung.py", label="📱 Samsung Prediction", icon="📱")
+with col4:
+    st.page_link("pages/4_Final.py", label="🐾 Animal Classifier", icon="🐾")
+
+st.markdown('</div>', unsafe_allow_html=True)
+
+# ==============================
+# Project Overview
 # ==============================
 st.markdown("---")
 st.markdown("## 🔹 Project Overview", unsafe_allow_html=True)
@@ -92,7 +118,6 @@ with col1:
         """,
         unsafe_allow_html=True
     )
-
     st.markdown(
         """
         <div class="card">
@@ -115,12 +140,11 @@ with col2:
         """,
         unsafe_allow_html=True
     )
-
     st.markdown(
         """
         <div class="card">
             <h3>🐾 Animal Classifier</h3>
-            <p>สาธิตการประยุกต์ใช้ AI Classification สำหรับรูปสัตว์  
+            <p>สาธิตการประยุกต์ใช้ AI Classification สำหรับรูปสัตว์</p>
         </div>
         """,
         unsafe_allow_html=True
@@ -131,7 +155,6 @@ with col2:
 # ==============================
 st.markdown("---")
 st.markdown("## 🌟 Key Highlights", unsafe_allow_html=True)
-
 st.markdown(
     """
     <div class="card">
@@ -162,3 +185,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
