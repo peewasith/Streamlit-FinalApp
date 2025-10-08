@@ -78,42 +78,12 @@ st.markdown(
 # =============================
 st.markdown("---")
 
-st.markdown(
-    """
-    <div class="button-card">
-        <h3>👤 Profile</h3>
-        <p>ข้อมูลผู้ทำและรายละเอียดโปรเจกต์</p>
-        <a href="https://github.com/your-username/1_Profile.py" target="_blank">
-            <button>ไปที่ Profile</button>
-        </a>
-    </div>
-
-    <div class="button-card">
-        <h3>📺 YouTube Analysis</h3>
-        <p>วิเคราะห์ข้อมูล YouTube และสถิติการใช้งาน</p>
-        <a href="https://github.com/your-username/2_YouTube.py" target="_blank">
-            <button>ไปที่ YouTube Analysis</button>
-        </a>
-    </div>
-
-    <div class="button-card">
-        <h3>📱 Samsung Prediction</h3>
-        <p>โมเดล Machine Learning จำแนกรุ่น Samsung</p>
-        <a href="https://github.com/your-username/3_Samsung.py" target="_blank">
-            <button>ไปที่ Samsung Prediction</button>
-        </a>
-    </div>
-
-    <div class="button-card">
-        <h3>🐾 Animal Classifier</h3>
-        <p>ทดลองใช้งาน AI Classification จำแนกสัตว์จริง</p>
-        <a href="https://animal-classifier-na5hzbrtutdzzvjz7wuxv5.streamlit.app/" target="_blank">
-            <button>ไปที่ Animal Classifier</button>
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("""
+    <a href="https://your-streamlit-profile-link" target="_blank" class="link-button">👤 Profile</a>
+    <a href="https://your-streamlit-youtube-link" target="_blank" class="link-button">📺 YouTube Analysis</a>
+    <a href="https://your-streamlit-samsung-link" target="_blank" class="link-button">📱 Samsung Prediction</a>
+    <a href="https://animal-classifier-na5hzbrtutdzzvjz7wuxv5.streamlit.app/" target="_blank" class="link-button">🐾 Animal Classifier</a>
+""", unsafe_allow_html=True)
 
 
 # =============================
@@ -132,6 +102,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
