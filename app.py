@@ -1,154 +1,110 @@
 import streamlit as st
 
-# ==============================
-# ตั้งค่า Page
-# ==============================
+# =============================
+# หน้า App หลัก
+# =============================
 st.set_page_config(
-    page_title="Data Science Mini Project Showcase",
-    page_icon="📊",
+    page_title="Animal Classifier Showcase",
+    page_icon="🐾",
     layout="wide"
 )
 
-# ==============================
-# CSS Theme (Pastel Cream)
-# ==============================
+# =============================
+# CSS Pastel Theme
+# =============================
 st.markdown(
     """
     <style>
     .main {
-        background-color: #FFF8E7; /* Pastel Cream */
+        background-color: #FFF8E7; /* Pastel cream */
         color: #000000;
-    }
-    .hero-box {
-        background-color: #FFF4E1;
-        padding: 50px;
-        border-radius: 20px;
-        text-align: center;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        margin-bottom: 50px;
-    }
-    .hero-box h1 {
-        margin: 0;
-        font-size: 48px;
-        color: #333333;
-        font-family: 'Arial Black', sans-serif;
-    }
-    .hero-box p {
-        margin-top: 15px;
-        font-size: 18px;
-        color: #555555;
+        padding: 30px;
     }
     .card {
         background-color: #FFF4E1;
         padding: 25px;
         border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         margin-bottom: 20px;
+        color: #000000;
     }
-    .card h3 {
-        margin-top: 0;
-        font-size: 24px;
-        color: #333333;
+    .header-box {
+        background-color: #FFF4E1;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        margin-bottom: 40px;
     }
-    .card p {
-        font-size: 16px;
-        color: #555555;
+    .header-box h1 {
+        margin: 0;
+        font-size: 42px;
+        color: #333;
+        font-family: 'Arial Black', sans-serif;
+        letter-spacing: 1px;
+    }
+    .btn-link {
+        display: block;
+        background-color: #FFA07A;
+        color: #000;
+        text-align: center;
+        padding: 15px 25px;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-bottom: 15px;
+    }
+    .btn-link:hover {
+        background-color: #FFB347;
+        transform: scale(1.05);
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# ==============================
-# Hero Section
-# ==============================
+# =============================
+# Header
+# =============================
 st.markdown(
     """
-    <div class="hero-box">
-        <h1>📊 Data Science Mini Project Showcase</h1>
-        <p>เว็บไซต์นี้รวบรวมผลงาน Mini Project ด้าน Data Science และ Machine Learning  
-        แสดงตัวอย่างการประยุกต์ใช้ AI และการทำงานจริงผ่าน Streamlit App</p>
+    <div class="header-box">
+        <h1>🐾 Animal Classifier Mini Project</h1>
+        <p style="font-size:18px; color:#555;">
+            เว็บไซต์นี้สาธิตการประยุกต์ใช้ AI Classification
+            ผ่าน Streamlit พร้อม Data, Model, และ Evaluation
+        </p>
     </div>
     """,
     unsafe_allow_html=True
 )
 
-# ==============================
-# Project Overview Cards
-# ==============================
-st.markdown("---")
-st.markdown("## 🔹 Project Overview", unsafe_allow_html=True)
+# =============================
+# ปุ่มลิงก์ไปแต่ละหน้า
+# =============================
+st.markdown('<div class="card" style="text-align:center;">', unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
+st.markdown("### 🔗 ไปยังแต่ละหน้าโปรเจกต์", unsafe_allow_html=True)
 
-with col1:
-    st.markdown(
-        """
-        <div class="card">
-            <h3>🥬 Profile</h3>
-            <p>ข้อมูลส่วนตัวและ Mini Project ของผู้ทำ  
-            แสดงประสบการณ์และการวิเคราะห์ข้อมูลเบื้องต้น</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+# เพิ่มปุ่มลิงก์ (URL ต้องตรงกับ GitHub หรือที่อัปโหลดไว้)
+pages = {
+    "👤 Profile": "https://your-github-link.com/1_Profile.py",
+    "📺 YouTube Analysis": "https://your-github-link.com/2_YouTube.py",
+    "📱 Samsung Prediction": "https://your-github-link.com/3_Samsung.py"
+}
 
-    st.markdown(
-        """
-        <div class="card">
-            <h3>📺 YouTube Analysis</h3>
-            <p>วิเคราะห์ข้อมูลจาก YouTube เช่น จำนวนผู้ชม ความนิยม  
-            และแสดง Insight ที่สามารถนำไปต่อยอดได้</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+for name, link in pages.items():
+    st.markdown(f'''
+        <a href="{link}" target="_blank" class="btn-link">{name}</a>
+    ''', unsafe_allow_html=True)
 
-with col2:
-    st.markdown(
-        """
-        <div class="card">
-            <h3>📱 Samsung Prediction</h3>
-            <p>สร้างโมเดล Machine Learning เพื่อทำนายรุ่น Samsung ที่เหมาะสม  
-            ต่อยอดเป็น Recommendation System</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown(
-        """
-        <div class="card">
-            <h3>🐾 Animal Classifier</h3>
-            <p>สาธิตการประยุกต์ใช้ AI Classification สำหรับรูปสัตว์  
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-# ==============================
-# Key Highlights
-# ==============================
-st.markdown("---")
-st.markdown("## 🌟 Key Highlights", unsafe_allow_html=True)
-
-st.markdown(
-    """
-    <div class="card">
-        <h3>เทคโนโลยีที่ใช้</h3>
-        <p>- Streamlit สำหรับ Web-based UI / Dashboard  
-        - TensorFlow / Keras สำหรับ Deep Learning (Image Classification)  
-        - Machine Learning โมเดลหลายแบบ (Decision Tree, Random Forest)  
-        - Transfer Learning กับ Pretrained Model (VGG16)  
-        - Data Preprocessing, Evaluation Metrics และ Visualization</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-# ==============================
-# Footer / CTA
-# ==============================
+# =============================
+# ตัวอย่างการใช้งานจริง
+# =============================
 st.markdown(
     """
     <div class="card" style="text-align:center;">
@@ -162,4 +118,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
