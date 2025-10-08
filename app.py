@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 # ==============================
-# CSS Theme (Pastel Cream + Modern Buttons without underline)
+# CSS Theme (Pastel Cream + Modern Buttons)
 # ==============================
 st.markdown(
     """
@@ -63,8 +63,8 @@ st.markdown(
         color: #555555;
     }
 
-    /* Modern Glass Buttons without underline */
-    .link-button {
+    /* Modern Buttons for Streamlit */
+    div.stButton > button {
         background: rgba(255, 248, 231, 0.8); /* Semi-transparent cream */
         color: #333333;
         border: 2px solid rgba(200,200,200,0.3);
@@ -74,22 +74,14 @@ st.markdown(
         font-weight: bold;
         cursor: pointer;
         transition: all 0.4s ease;
-        text-decoration: none; /* Remove underline */
-        display: inline-block;
-        margin-top: 10px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.08), 0 0 10px rgba(255,255,255,0.3);
         backdrop-filter: blur(8px);
     }
-    .link-button:hover {
+    div.stButton > button:hover {
         background: rgba(255, 248, 231, 1);
         box-shadow: 0 12px 28px rgba(0,0,0,0.12), 0 0 20px rgba(255,255,255,0.5);
         transform: scale(1.08);
         color: #222222;
-        text-decoration: none; /* Ensure no underline on hover */
-    }
-    .link-button:focus {
-        outline: none;
-        text-decoration: none; /* Remove underline on click/focus */
     }
     </style>
     """,
@@ -147,11 +139,13 @@ for i, project in enumerate(projects):
             <div class="card">
                 <h3>{project['title']}</h3>
                 <p>{project['description'].replace('\n','<br>')}</p>
-                <a class="link-button" href="{project['url']}" target="_blank">🔗 ไปยังโปรเจกต์</a>
             </div>
             """,
             unsafe_allow_html=True
         )
+        if st.button(f"🔗 ไปยัง {project['title']}"):
+            js = f"window.open('{project['url']}')"
+            st.components.v1.html(f"<script>{js}</script>")
 
 # ==============================
 # Footer / CTA
@@ -161,8 +155,11 @@ st.markdown(
     <div class="card" style="text-align:center;">
         <h3>ทดลองใช้งานโปรเจกต์จริง</h3>
         <p>คลิกเพื่อเปิด Animal Classifier App และดูการทำงานจริง</p>
-        <a class="link-button" href="https://7bbbzkxrabjl8jsiabbfwp.streamlit.app/" target="_blank">🐾 เปิด Animal Classifier</a>
     </div>
     """,
     unsafe_allow_html=True
 )
+if st.button("🐾 เปิด Animal Classifier"):
+    js = "window.open('https://7bbbzkxrabjl8jsiabbfwp.streamlit.app/')"
+    st.components.v1.html(f"<script>{js}</script>")
+
