@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 # ==============================
-# CSS Theme (Pastel Cream + Modern Buttons)
+# CSS Theme (Pastel Cream + Modern Buttons without underline)
 # ==============================
 st.markdown(
     """
@@ -63,7 +63,7 @@ st.markdown(
         color: #555555;
     }
 
-    /* Modern Glass Buttons */
+    /* Modern Glass Buttons without underline */
     .link-button {
         background: rgba(255, 248, 231, 0.8); /* Semi-transparent cream */
         color: #333333;
@@ -74,7 +74,7 @@ st.markdown(
         font-weight: bold;
         cursor: pointer;
         transition: all 0.4s ease;
-        text-decoration: none;
+        text-decoration: none; /* Remove underline */
         display: inline-block;
         margin-top: 10px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.08), 0 0 10px rgba(255,255,255,0.3);
@@ -85,6 +85,11 @@ st.markdown(
         box-shadow: 0 12px 28px rgba(0,0,0,0.12), 0 0 20px rgba(255,255,255,0.5);
         transform: scale(1.08);
         color: #222222;
+        text-decoration: none; /* Ensure no underline on hover */
+    }
+    .link-button:focus {
+        outline: none;
+        text-decoration: none; /* Remove underline on click/focus */
     }
     </style>
     """,
