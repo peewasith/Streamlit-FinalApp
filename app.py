@@ -88,15 +88,10 @@ st.markdown('<div class="page-links">', unsafe_allow_html=True)
 
 col1, col2, col3, col4 = st.columns(4)
 
-with col1:
-    st.page_link("pages/1_Profile.py", label="👤 Profile", icon="📄")
-with col2:
-    st.page_link("pages/2_Youtube.py", label="🎥 YouTube Analysis", icon="📊")
-with col3:
-    st.page_link("pages/3_Samsung.py", label="📱 Samsung Prediction", icon="📱")
-with col4:
-    st.page_link("pages/4_Final.py", label="🐾 Animal Classifier", icon="🐾")
-
+st.page_link("1_Profile.py", label="👤 Profile", icon="📄")
+st.page_link("2_Youtube.py", label="🎥 YouTube Analysis", icon="📊")
+st.page_link("3_Samsung.py", label="📱 Samsung Prediction", icon="📱")
+st.page_link("4_Final.py", label="🐾 Animal Classifier", icon="🐾")
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ==============================
@@ -185,5 +180,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
